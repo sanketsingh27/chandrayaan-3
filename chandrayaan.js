@@ -16,6 +16,9 @@ const moveForward = (coordinates, direction) => {
   } else if (direction === "E") {
     coordinates[0] += 1;
     return coordinates;
+  } else if (direction === "S") {
+    coordinates[1] -= 1;
+    return coordinates;
   }
 };
 
