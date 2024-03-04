@@ -19,6 +19,9 @@ const moveForward = (coordinates, direction) => {
   } else if (direction === "S") {
     coordinates[1] -= 1;
     return coordinates;
+  } else if (direction === "W") {
+    coordinates[0] -= 1;
+    return coordinates;
   }
 };
 
