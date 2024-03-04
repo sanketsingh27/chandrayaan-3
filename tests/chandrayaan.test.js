@@ -19,4 +19,19 @@ describe("move chandrayaan in (x,y,x) directions", () => {
 
     expect(moveChandrayaan(initialConditions)).toStrictEqual(expected);
   });
+
+  test("move chandrayaan 1 unit forward when direction is 'E", () => {
+    const initialConditions = {
+      commands: ["f"],
+      coordinates: [0, 0, 0],
+      direction: "E",
+    };
+
+    const expected = {
+      direction: "E",
+      coordinates: [1, 0, 0],
+    };
+
+    expect(moveChandrayaan(initialConditions)).toStrictEqual(expected);
+  });
 });

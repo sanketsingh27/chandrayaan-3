@@ -10,8 +10,11 @@ function moveChandrayaan({ commands, coordinates, direction }) {
 }
 
 const moveForward = (coordinates, direction) => {
-  if ((direction = "N")) {
+  if (direction === "N") {
     coordinates[1] += 1;
+    return coordinates;
+  } else if (direction === "E") {
+    coordinates[0] += 1;
     return coordinates;
   }
 };
