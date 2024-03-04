@@ -16,6 +16,10 @@ function moveChandrayaan({ commands, coordinates, direction }) {
       direction = turnLeft(direction);
       continue;
     }
+    if (command === "u") {
+      direction = "U";
+      continue;
+    }
   }
 
   return { coordinates, direction };

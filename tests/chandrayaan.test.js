@@ -371,3 +371,21 @@ describe("chandrayaan moves left in (x,y,x) directions", () => {
     expect(moveChandrayaan(initialConditions)).toStrictEqual(expected);
   });
 });
+
+describe(" turn chandrayaan upward from all directions ", () => {
+  ["N", "S", "E", "W", "D"].forEach((direction) => {
+    test(`turn up from ${direction}`, () => {
+      const initialConditions = {
+        commands: ["u"],
+        coordinates: [0, 0, 0],
+        direction: direction,
+      };
+
+      const expected = {
+        direction: "U",
+        coordinates: [0, 0, 0],
+      };
+      expect(moveChandrayaan(initialConditions)).toStrictEqual(expected);
+    });
+  });
+});
