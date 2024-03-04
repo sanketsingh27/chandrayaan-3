@@ -4,6 +4,14 @@ function moveChandrayaan({ commands, coordinates, direction }) {
       coordinates = moveForward(coordinates, direction);
       continue;
     }
+    if (command === "b") {
+      coordinates = moveBackward(coordinates, direction);
+      continue;
+    }
+    if (command === "r") {
+      direction = turnRight(direction);
+      continue;
+    }
   }
 
   return { coordinates, direction };
@@ -30,6 +38,46 @@ const moveForward = (coordinates, direction) => {
     return coordinates;
   } else {
     return "enter valid direction and coordinates ";
+  }
+};
+
+const moveBackward = (coordinates, direction) => {
+  if (direction === "N") {
+    coordinates[1] -= 1;
+    return coordinates;
+  } else if (direction === "E") {
+    coordinates[0] -= 1;
+    return coordinates;
+  } else if (direction === "S") {
+    coordinates[1] += 1;
+    return coordinates;
+  } else if (direction === "W") {
+    coordinates[0] += 1;
+    return coordinates;
+  } else if (direction === "U") {
+    coordinates[2] -= 1;
+    return coordinates;
+  } else if (direction === "D") {
+    coordinates[2] += 1;
+    return coordinates;
+  } else {
+    return "enter valid direction and coordinates ";
+  }
+};
+
+const turnRight = (direction) => {
+  if (direction === "N") {
+    return "E";
+  } else if (direction === "S") {
+    return "W";
+  } else if (direction === "E") {
+    return "S";
+  } else if (direction === "W") {
+    return "N";
+  } else if (direction === "U") {
+    return "N";
+  } else if (direction === "B") {
+    return "S";
   }
 };
 
