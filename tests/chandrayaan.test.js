@@ -1,6 +1,6 @@
 const { moveChandrayaan } = require("../chandrayaan");
 
-describe("move chandrayaan in (x,y,x) directions", () => {
+describe("chandrayaan forward in (x,y,x) directions", () => {
   test("move chandrayaan function is defined", () => {
     expect(moveChandrayaan).toBeDefined();
   });
@@ -75,6 +75,21 @@ describe("move chandrayaan in (x,y,x) directions", () => {
     const expected = {
       direction: "U",
       coordinates: [0, 0, 1],
+    };
+
+    expect(moveChandrayaan(initialConditions)).toStrictEqual(expected);
+  });
+
+  test("move chandrayaan 1 unit forward when direction is 'D", () => {
+    const initialConditions = {
+      commands: ["f"],
+      coordinates: [0, 0, 0],
+      direction: "D",
+    };
+
+    const expected = {
+      direction: "D",
+      coordinates: [0, 0, -1],
     };
 
     expect(moveChandrayaan(initialConditions)).toStrictEqual(expected);

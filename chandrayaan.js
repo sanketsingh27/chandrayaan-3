@@ -25,6 +25,11 @@ const moveForward = (coordinates, direction) => {
   } else if (direction === "U") {
     coordinates[2] += 1;
     return coordinates;
+  } else if (direction === "D") {
+    coordinates[2] -= 1;
+    return coordinates;
+  } else {
+    return "enter valid direction and coordinates ";
   }
 };
 
