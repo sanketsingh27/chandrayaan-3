@@ -12,6 +12,10 @@ function moveChandrayaan({ commands, coordinates, direction }) {
       direction = turnRight(direction);
       continue;
     }
+    if (command === "l") {
+      direction = turnLeft(direction);
+      continue;
+    }
   }
 
   return { coordinates, direction };
@@ -75,8 +79,24 @@ const turnRight = (direction) => {
   } else if (direction === "W") {
     return "N";
   } else if (direction === "U") {
+    return "S";
+  } else if (direction === "D") {
     return "N";
-  } else if (direction === "B") {
+  }
+};
+
+const turnLeft = (direction) => {
+  if (direction === "N") {
+    return "W";
+  } else if (direction === "S") {
+    return "E";
+  } else if (direction === "E") {
+    return "N";
+  } else if (direction === "W") {
+    return "S";
+  } else if (direction === "U") {
+    return "N";
+  } else if (direction === "D") {
     return "S";
   }
 };

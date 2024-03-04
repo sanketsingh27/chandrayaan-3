@@ -257,6 +257,53 @@ describe("chandrayaan moves right in (x,y,x) directions", () => {
     };
 
     const expected = {
+      direction: "S",
+      coordinates: [0, 0, 0],
+    };
+
+    expect(moveChandrayaan(initialConditions)).toStrictEqual(expected);
+  });
+
+  test("move chandrayaan 1 unit right when direction is 'D", () => {
+    const initialConditions = {
+      commands: ["r"],
+      coordinates: [0, 0, 0],
+      direction: "D",
+    };
+
+    const expected = {
+      direction: "N",
+      coordinates: [0, 0, 0],
+    };
+
+    expect(moveChandrayaan(initialConditions)).toStrictEqual(expected);
+  });
+});
+
+describe("chandrayaan moves left in (x,y,x) directions", () => {
+  test("move chandrayaan 1 unit left when direction is 'N", () => {
+    const initialConditions = {
+      commands: ["l"],
+      coordinates: [0, 0, 0],
+      direction: "N",
+    };
+
+    const expected = {
+      direction: "W",
+      coordinates: [0, 0, 0],
+    };
+
+    expect(moveChandrayaan(initialConditions)).toStrictEqual(expected);
+  });
+
+  test("move chandrayaan 1 unit left when direction is 'E", () => {
+    const initialConditions = {
+      commands: ["l"],
+      coordinates: [0, 0, 0],
+      direction: "E",
+    };
+
+    const expected = {
       direction: "N",
       coordinates: [0, 0, 0],
     };
@@ -264,11 +311,56 @@ describe("chandrayaan moves right in (x,y,x) directions", () => {
     expect(moveChandrayaan(initialConditions)).toStrictEqual(expected);
   });
 
-  test("move chandrayaan 1 unit right when direction is 'B", () => {
+  test("move chandrayaan 1 unit left when direction is 'S", () => {
     const initialConditions = {
-      commands: ["r"],
+      commands: ["l"],
       coordinates: [0, 0, 0],
-      direction: "B",
+      direction: "S",
+    };
+
+    const expected = {
+      direction: "E",
+      coordinates: [0, 0, 0],
+    };
+
+    expect(moveChandrayaan(initialConditions)).toStrictEqual(expected);
+  });
+
+  test("move chandrayaan 1 unit left when direction is 'W", () => {
+    const initialConditions = {
+      commands: ["l"],
+      coordinates: [0, 0, 0],
+      direction: "W",
+    };
+
+    const expected = {
+      direction: "S",
+      coordinates: [0, 0, 0],
+    };
+
+    expect(moveChandrayaan(initialConditions)).toStrictEqual(expected);
+  });
+
+  test("move chandrayaan 1 unit left when direction is 'U", () => {
+    const initialConditions = {
+      commands: ["l"],
+      coordinates: [0, 0, 0],
+      direction: "U",
+    };
+
+    const expected = {
+      direction: "N",
+      coordinates: [0, 0, 0],
+    };
+
+    expect(moveChandrayaan(initialConditions)).toStrictEqual(expected);
+  });
+
+  test("move chandrayaan 1 unit left when direction is 'D", () => {
+    const initialConditions = {
+      commands: ["l"],
+      coordinates: [0, 0, 0],
+      direction: "D",
     };
 
     const expected = {
