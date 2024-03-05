@@ -436,4 +436,18 @@ describe(" turn chandrayaan with  of cmds Arr  ", () => {
     };
     expect(moveChandrayaan(initialConditions)).toStrictEqual(expected);
   });
+
+  test("complex movement  ", () => {
+    const initialConditions = {
+      commands: ["f", "r", "b", "b", "l"],
+      coordinates: [0, 0, 0],
+      direction: "N",
+    };
+
+    const expected = {
+      coordinates: [-2, 1, 0],
+      direction: "N",
+    };
+    expect(moveChandrayaan(initialConditions)).toStrictEqual(expected);
+  });
 });
