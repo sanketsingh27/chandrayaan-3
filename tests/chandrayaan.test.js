@@ -389,3 +389,51 @@ describe(" turn chandrayaan upward from all directions ", () => {
     });
   });
 });
+
+describe(" turn chandrayaan downward from all directions ", () => {
+  ["N", "S", "E", "W", "D"].forEach((direction) => {
+    test(`turn downwards from ${direction}`, () => {
+      const initialConditions = {
+        commands: ["d"],
+        coordinates: [0, 0, 0],
+        direction: direction,
+      };
+
+      const expected = {
+        direction: "D",
+        coordinates: [0, 0, 0],
+      };
+      expect(moveChandrayaan(initialConditions)).toStrictEqual(expected);
+    });
+  });
+});
+
+describe(" turn chandrayaan with  of cmds Arr  ", () => {
+  test("complex move ", () => {
+    const initialConditions = {
+      commands: ["f", "r", "u", "b", "l"],
+      coordinates: [0, 0, 0],
+      direction: "N",
+    };
+
+    const expected = {
+      coordinates: [0, 1, -1],
+      direction: "N",
+    };
+    expect(moveChandrayaan(initialConditions)).toStrictEqual(expected);
+  });
+
+  test("repeated command ", () => {
+    const initialConditions = {
+      commands: ["f", "f", "f", "f", "f"],
+      coordinates: [0, 0, 0],
+      direction: "E",
+    };
+
+    const expected = {
+      coordinates: [5, 0, 0],
+      direction: "E",
+    };
+    expect(moveChandrayaan(initialConditions)).toStrictEqual(expected);
+  });
+});

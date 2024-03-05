@@ -20,6 +20,10 @@ function moveChandrayaan({ commands, coordinates, direction }) {
       direction = "U";
       continue;
     }
+    if (command === "d") {
+      direction = "D";
+      continue;
+    }
   }
 
   return { coordinates, direction };
